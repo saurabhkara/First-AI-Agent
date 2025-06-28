@@ -29,30 +29,30 @@ An LLM is a type of AI model trained on vast amounts of text data to understand 
 
 LLM is a core tool, not the complete system — it’s the “brain” that powers many AI experiences.
 
-![alt text](<Screenshot (303).png>)
+![alt text](<assets/Screenshot (303).png>)
 
 ### AI Workflow
 
 An AI workflow is the complete pipeline or process used to build, run, or manage an AI system from input to output.
 
-![alt text](<Screenshot (302).png>)
+![alt text](<assets/Screenshot (302).png>)
 
-![alt text](<Screenshot (306).png>)
+![alt text](<assets/Screenshot (306).png>)
 
-![alt text](<Screenshot (304).png>)
+![alt text](<assets/Screenshot (304).png>)
 
 ReAct - Reasoning then Action
 
-![alt text](<Screenshot (305).png>)
+![alt text](<assets/Screenshot (305).png>)
 
 ### AI Agents
 
 An AI agent is an autonomous system that uses AI (often including LLMs) to interact with the environment, make decisions, and perform actions toward a goal.
 example : manus ai
 
-![alt text](<Screenshot (307).png>)
+![alt text](<assets/Screenshot (307).png>)
 
-![alt text](<Screenshot (308).png>)
+![alt text](<assets/Screenshot (308).png>)
 
 Types of AI Agents
 
@@ -63,36 +63,36 @@ Types of AI Agents
 
 A Single AI Agent is an autonomous system designed to accomplish a specific goal or set of tasks independently, by interacting with its environment, using AI capabilities like reasoning, learning, or planning
 
-![alt text](<Screenshot (309).png>)
-![alt text](<Screenshot (310).png>)
+![alt text](<assets/Screenshot (309).png>)
+![alt text](<assets/Screenshot (310).png>)
 
 ### Multi Model AI Agent
 
 A Multi-Level AI Model refers to an AI architecture that consists of multiple layers or stages, where each level performs a specific task or abstraction, building on the output of the previous level.
 
-![alt text](<Screenshot (311).png>)
+![alt text](<assets/Screenshot (311).png>)
 
 ### Pattern of setting AI Agents
 
 - **Sequential Pattern**
 
-![alt text](<Screenshot (312).png>)
+![alt text](<assets/Screenshot (312).png>)
 
 - **Hierarchical Pattern**
 
-![alt text](<Screenshot (313).png>)
+![alt text](<assets/Screenshot (313).png>)
 
 - **Hybrid Agent Design Pattern**
 
-![alt text](<Screenshot (314).png>)
+![alt text](<assets/Screenshot (314).png>)
 
 - **Parallel Agent Design Pattern**
 
-![alt text](<Screenshot (315).png>)
+![alt text](<assets/Screenshot (315).png>)
 
 - **Asynchronous Agent Design Pattern**
 
-![alt text](<Screenshot (316).png>)
+![alt text](<assets/Screenshot (316).png>)
 
 ### Types of AI Agent
 
@@ -106,7 +106,7 @@ A Multi-Level AI Model refers to an AI architecture that consists of multiple la
   A reflective AI agent is an agent that not only acts to achieve its goals, but also thinks about its own actions, evaluates results, and adjusts its behavior based on what it learns.
   A simple reflective agent is the basic version of this: it makes decisions based on past experience and feedback, but doesn't use complex memory or deep reasoning.
 
-![alt text](<Screenshot (317).png>)
+![alt text](<assets/Screenshot (317).png>)
 
 - **Model Based Reflex Agent**
   A Model-Based Reflex Agent is an AI agent that makes decisions based on:
@@ -114,24 +114,39 @@ A Multi-Level AI Model refers to an AI architecture that consists of multiple la
 1. Current sensor input and
 2. A model of the world (i.e., internal memory or representation of how the environment works)
 
-![alt text](<Screenshot (318).png>)
+![alt text](<assets/Screenshot (318).png>)
 
 - **Goal Based Agent**
   A Goal-Based Agent is an AI agent that doesn’t just react — it selects and performs actions by considering future goals and how best to achieve them.
 
-![alt text](<Screenshot (319).png>)
+![alt text](<assets/Screenshot (319).png>)
 
 - **Utility based AI Agent**
   A Utility-Based Agent is a type of intelligent agent that doesn't just reach a goal — it chooses the best way to reach the goal, based on a utility function that measures how good or how desirable each possible outcome is.
 
-![alt text](<Screenshot (320).png>)
+![alt text](<assets/Screenshot (320).png>)
 
 - **Learning based AI Agent**
   A Learning-Based AI Agent is an intelligent agent that can improve its performance over time by learning from experience, data, feedback, or exploration, rather than relying only on hard-coded rules.
 
-![alt text](<Screenshot (321).png>)
+![alt text](<assets/Screenshot (321).png>)
+
+### Project
+
+Set up the Script attribute to run the project
+
+```
+"scripts": {
+    "start": "bun run agent.js",
+    "dev": "node --env-file=.env agent.js"
+  }
+```
 
 ### Running Application
+
+Package.json
+
+"Script" attribute should set up to run
 
 To install dependencies:
 
@@ -142,9 +157,7 @@ bun install
 To run:
 
 ```bash
-bun run index.ts
+bun run start
 ```
 
 This project was created using `bun init` in bun v1.2.17. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
-"# First-AI-Agent" 
-"# First-AI-Agent" 
