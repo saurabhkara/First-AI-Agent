@@ -142,6 +142,19 @@ Set up the Script attribute to run the project
   }
 ```
 
+Import and initialize groq
+
+```js
+import Groq from "groq-sdk";
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+```
+
+**Role**
+A role defines the function, responsibility, or task an AI agent is meant to perform in a system.
+
+**Persona**
+A persona defines the style, tone, personality, or communication behavior of an agent — how it interacts, not just what it does.
+
 ### Running Application
 
 Package.json
