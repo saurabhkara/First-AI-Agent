@@ -1,6 +1,8 @@
 import Groq from "groq-sdk";
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
+const expenseDB = [];
+
 async function main() {
   const messages = [
     {
@@ -11,7 +13,11 @@ async function main() {
 
   messages.push({
     role: "user",
-    content: `How much money I have spend in this month ?`,
+    content: `Bought a macbook of 50000 INR`,
+  });
+  messages.push({
+    role: "user",
+    content: `My total expense of this month`,
   });
 
   while (true) {
@@ -39,6 +45,27 @@ async function main() {
             },
           },
         },
+        {
+          type: "function",
+          function: {
+            name: "addExpense",
+            description:
+              "To add all expenses in Database,Objects will stored in database which contain two properties",
+            parameters: {
+              type: "object",
+              properties: {
+                name: {
+                  type: "string",
+                  description: "it is name of expense e.g. bought an iphone",
+                },
+                amount: {
+                  type: "string",
+                  description: "it is amount of expense eg. 4000 inr,",
+                },
+              },
+            },
+          },
+        },
       ],
     });
 
@@ -60,6 +87,9 @@ async function main() {
       let result = "";
       if (functionName === "getTotalExpenses") {
         result = getTotalExpenses(functionArgs);
+      } else if (functionName === "addExpense") {
+        console.log("functionalargument**", functionArgs);
+        result = addExpense(functionArgs);
       }
 
       messages.push({
@@ -69,6 +99,7 @@ async function main() {
       });
     }
   }
+  console.log("Database:", expenseDB);
 }
 
 main();
@@ -77,5 +108,14 @@ main();
 
 function getTotalExpenses({ from, to }) {
   console.log("GetTotal Expenses function", from, to);
-  return "10000 INR";
+  const expense = expenseDB.reduce((acc, item) => {
+    return (acc = acc + item);
+  }, 0);
+  return `Made total of ${expense}`;
+}
+
+function addExpense({ name, amount }) {
+  console.log(`Made an expense of ${amount} for ${name}`);
+  expenseDB.push({ name, amount });
+  return "expense added into db";
 }
