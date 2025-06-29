@@ -155,6 +155,16 @@ A role defines the function, responsibility, or task an AI agent is meant to per
 **Persona**
 A persona defines the style, tone, personality, or communication behavior of an agent — how it interacts, not just what it does.
 
+**Tools**
+In AI — especially with AI agents — a tool is an external function, API, or system that the agent can call or use to perform tasks it can't do by itself.
+
+### About the project
+
+In this Project `llama-3.1-8b-instant` LLM used from Groq interface.
+Created 3 tools to track total income, expenses and add income.
+
+![project terminal output](<assets/Screenshot (323).png>)
+
 ### Running Application
 
 Package.json
